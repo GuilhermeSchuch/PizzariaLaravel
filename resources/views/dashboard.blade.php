@@ -1,6 +1,20 @@
 <x-header />
 <x-navbar />
 
+<?php 
+    print_r($saboresPizza);
+    echo "<br>";
+    echo "<br>";
+    print_r($saboresPizza[0]);
+    echo "<br>";
+    print_r($saboresPizza[0][0]["nome"]);
+    echo "<br>";
+    print_r($saboresPizza[1]);
+    echo "<br>";
+    echo count($saboresPizza);
+?>
+
+
 <div class="dashboard-container">
     <section class="chart">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -13,13 +27,12 @@
                 var data = google.visualization.arrayToDataTable([
                     ['Sabores', 'quantidade'],
 
-                    ['4 Queijos', 2],
-                    ['Frango com Catupiry', 2],
-                    ['Calabresa', 2],
-                    ['Lombinho', 2],
-                    ['Filé com Cheddar', 2],
-                    ['Portuguesa', 2],
-                    ['Margherita', 2],
+                    
+                    <?php 
+                        for($i = 0; $i < count($sabores); $i++){
+                            echo "['" . $sabores[$i]->nome . "', " . $saboresQtd[$i][0] . "],";
+                        }
+                    ?>
 
                 ]);
 
@@ -84,6 +97,52 @@
                 <tbody>
 
 
+                    <?php if($data): ?>
+
+                            <?php forEach($data as $pedido): ?>
+                                <tr>
+                                    <td><?= $pedido['massa'] ?></td>
+                                    <td><?= $pedido['borda'] ?></td>
+
+                                    <td>
+                                        <?php for($i = 0; $i < count($saboresPizza); $i++): ?>
+                                            <?php for($c = 0; $c < count($saboresPizza[$i]); $c++): ?>
+                                                <?php for($n = 0; $n < count($saboresPizza[$i][$c]); $n++): ?>
+                                                    <?= $saboresPizza[$i][$c]["nome"] ?>
+                                                <?php endfor; ?>
+                                            <?php endfor; ?>
+                                        <?php endfor; ?>
+                                    </td>
+
+                                    <td>
+                                        <select>
+                                            <option value="1">Em produção</option>
+                                            <option value="2">Entrega</option>
+                                            <option value="3">Concluído</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <form action="{{ route('dashboard.destroy', $pedido[0]) }}" method="post">
+                                            @method('delete')
+                                            @csrf
+                                            
+                                            <button type='submit'><ion-icon name='trash-outline'></ion-icon></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+
+                    <?php else: ?>
+                        <tr>
+                            <td>Nenhum pedido registrado ainda...</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    <?php endif; ?>
+                        
                 </tbody>
             </table>
         </div>

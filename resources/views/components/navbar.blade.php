@@ -2,21 +2,21 @@
     <div class="navigation">
         <ul>
             <li class="list active">
-                <a href="dashboard.php">
+                <a href="{{ route('dashboard') }}">
                     <span class="icon"><ion-icon name="stats-chart-outline"></ion-icon></span>
                     <span class="text">Dashboard</span>
                 </a>
             </li>
 
             <li class="list">
-                <a href="charts.php">
+                <a href="{{ route('charts') }}">
                     <span class="icon"><ion-icon name="pie-chart-outline"></ion-icon></span>
                     <span class="text">Charts</span>
                 </a>
             </li>
 
             <li class="list">
-                <a href="manage.php">
+                <a href="{{ route('manage') }}">
                     <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
                     <span class="text">Manage</span>
                 </a>
@@ -30,7 +30,7 @@
             </li>
 
             <li class="list">
-                <a href="index.php">
+                <a href="{{route('logout')}}">
                     <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                     <span class="text">Logout</span>
                 </a>

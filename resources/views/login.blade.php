@@ -1,6 +1,5 @@
 <x-header />
 
-<?php print_r($sabores->sabor); ?>
 
 
 <div class="authBox">

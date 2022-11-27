@@ -34,6 +34,9 @@ class HomeController extends Controller {
             $result = $stmt->execute();
         }
 
+        $stmt = $pdo->prepare("INSERT INTO pedidos (pizza_id, status_id) VALUES ((SELECT pizzas.id FROM pizzas ORDER BY pizzas.id DESC LIMIT 1), 1)");
+        $result = $stmt->execute();
+
         return redirect()->route('home');
         // return view('login', ["sabores"=>$sabores]);
     }

@@ -17,9 +17,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <!-- CUSTOM JS -->
-    <script src="js/checkbox.js" defer></script>
-    <script src="js/msg_fade_out.js" defer></script>
-    <script src="js/modal.js" defer></script>
+    <script src="{{url('js/checkbox.js')}}" defer></script>
+    <script src="{{url('js/msg_fade_out.js')}}" defer></script>
+    <script src="{{url('js/modal.js')}}" defer></script>
 
     <!-- ION ICONS -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
