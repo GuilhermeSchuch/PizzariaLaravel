@@ -1,6 +1,8 @@
 <x-header />
 
-
+@if (session("error"))
+    <div class="alert alert-danger msg">{{ session("error") }}</div>
+@endif
 
 <div class="authBox">
     <img src="img/top-image-form-auth.png" alt="User" class="user">
@@ -23,3 +25,10 @@
 <div class="system-acess">
     <a href="{{ url('/') }}">Voltar</a>
 </div>
+
+<style>
+    .alert{
+        z-index: 99;
+        margin-top: 1vh
+    }
+</style>

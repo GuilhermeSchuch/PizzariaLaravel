@@ -53,7 +53,7 @@ class DashboardController extends Controller
             return view('dashboard', ["sabores"=>$sabores, "saboresQtd"=>$saboresQtd, "data"=>$data, "saboresPizza"=>$saboresPizza]);
         }
         else{
-            return redirect()->route('login');
+            return redirect('login')->with("error", "Você precisa estar logado!");
         }
     }
 

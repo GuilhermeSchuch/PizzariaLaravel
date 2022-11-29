@@ -25,10 +25,6 @@ body{
     font-family: sans-serif;
 }
 
-main{
-    
-}
-
 .msg-container {
     background-color: transparent;
     padding: 15px;
@@ -38,7 +34,7 @@ main{
     width: 60%;
     margin: 0 auto;
     padding: 10px;
-    border: solid 1px #000;
+    /* border: solid 1px #000; */
     text-align: center;
   }
   
@@ -60,7 +56,7 @@ main{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
-    height: 450px;
+    height: 550px;
     padding: 80px 40px;
     background-color: rgba(0, 0, 0, .5);
 }
@@ -363,24 +359,50 @@ input[type="checkbox"]{
 
 /* DASHBOARD */
 .dashboard-container{
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
 }
 
 .chart{
     /* border: 1px solid blue; */
     background-color: transparent;
     max-width: 40%;
-    
+}
+
+.dc{
+    max-width: 40%;
+}
+
+@media (max-width: 1005px) { 
+    .main{
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        
+    }
+
+    .dc{
+        max-width: 100%;
+        
+    }
 }
 
 .tables{
+    margin: 1vh 3vw;
     width: 100%;
     display: flex;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
 }
+
 
 table {
     width: 100%;
@@ -449,27 +471,58 @@ td button {
 }
 
 /* CHARTS */
-.charts{
-    border: 1px solid blue;
-}
-
-.duo_charts{
-    border: 3px solid green;
+.charts-container{
     display: flex;
-    justify-content: space-around;
-    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
 }
 
-.one_chart{
-    border: 3px solid red;
-    background-color: rgba(0, 0, 0, 0.5);
+.charts{
+    /* border: 1px solid blue; */
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* background-color: rgba(0, 0, 0, 0.5); */
 }
+
+.chart{
+    /* border: 1px solid rgb(0, 0, 0);  */
+}
+
+@media (max-width: 1005px) { 
+    .charts{
+        display: inline-block;
+        align-items: center;
+        
+    }
+
+    .chart{
+        min-width: 100%;
+        
+    }
+}
+
 
 /* MANAGE */
-.manage_dough{
-    border: 1px solid black;
+.manage-container{
+    
+    padding: .5em;
+}
+
+.manage{
+    /* border: 1px solid black; */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: .5em;
+    border-radius: 30px;
     display: flex;
 }
-.dough-crud{
-    border: 1px solid blue;
+
+.manage h1{
+    color: white;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid blue; */
 }

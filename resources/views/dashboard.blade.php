@@ -2,21 +2,43 @@
 <x-navbar />
 
 <?php 
-    print_r($saboresPizza);
-    echo "<br>";
-    echo "<br>";
-    print_r($saboresPizza[0]);
-    echo "<br>";
-    print_r($saboresPizza[0][0]["nome"]);
-    echo "<br>";
-    print_r($saboresPizza[1]);
-    echo "<br>";
-    echo count($saboresPizza);
+    // print_r($saboresPizza);
+    // echo "<br>";
+    // echo "<br>";
+    // print_r($saboresPizza[0]);
+    // echo "<br>";
+    // print_r($saboresPizza[1]);
+    // echo "<br>";
+    // echo count($saboresPizza);
+    // echo "<br>";
+
+    // for($i = 0; $i < count($saboresPizza); $i++){
+    //     echo "Array da pizza: " . $i;
+    //     echo "<br>";
+
+    //     for($n = 0; $n < count($saboresPizza[$i]); $n++){
+    //         print_r($saboresPizza[$i][$n]["nome"]);
+    //         echo "<br>";
+    //     }
+    // }
+
+    // echo "<hr>";
+    // echo "<br>";
+
+
+    // for($i = 0; $i < count($data); $i++){
+    //     echo "Array da pizza: " . $i;
+    //     echo "<br>";
+    //     print_r($data[$i]);
+    //     echo "<br>";
+
+    // }
+
 ?>
 
 
-<div class="dashboard-container">
-    <section class="chart">
+<div class="dashboard-container main">
+    <section class="chart dc">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
             google.charts.load('current', {'packages':['corechart']});
@@ -40,7 +62,7 @@
                     title: 'Sabores mais vendidos',
                     backgroundColor: {
                         'fill': '#000',
-                        'fillOpacity': 0.3 
+                        'fillOpacity': 0.6 
                     },
                     colors: [
                         '#cccc00', 
@@ -99,18 +121,14 @@
 
                     <?php if($data): ?>
 
-                            <?php forEach($data as $pedido): ?>
+                            <?php for($i = 0; $i < count($data); $i++): ?>
                                 <tr>
-                                    <td><?= $pedido['massa'] ?></td>
-                                    <td><?= $pedido['borda'] ?></td>
+                                    <td><?= $data[$i]["massa"] ?></td>
+                                    <td><?= $data[$i]["borda"] ?></td>
 
                                     <td>
-                                        <?php for($i = 0; $i < count($saboresPizza); $i++): ?>
-                                            <?php for($c = 0; $c < count($saboresPizza[$i]); $c++): ?>
-                                                <?php for($n = 0; $n < count($saboresPizza[$i][$c]); $n++): ?>
-                                                    <?= $saboresPizza[$i][$c]["nome"] ?>
-                                                <?php endfor; ?>
-                                            <?php endfor; ?>
+                                        <?php for($n = 0; $n < count($saboresPizza[$i]); $n++): ?>
+                                            <?php echo $saboresPizza[$i][$n]["nome"]; ?>
                                         <?php endfor; ?>
                                     </td>
 
@@ -123,7 +141,7 @@
                                     </td>
 
                                     <td>
-                                        <form action="{{ route('dashboard.destroy', $pedido[0]) }}" method="post">
+                                        <form action="{{ route('dashboard.destroy', $data[$i]["pizza_id"]) }}" method="post">
                                             @method('delete')
                                             @csrf
                                             
@@ -131,7 +149,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                            <?php endforeach; ?>
+                            <?php endfor; ?>
 
                     <?php else: ?>
                         <tr>

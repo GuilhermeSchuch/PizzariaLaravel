@@ -59,7 +59,8 @@ class ChartController extends Controller
             return view('chart', ["sabores"=>$sabores, "saboresQtd"=>$saboresQtd, "bordas"=>$bordas, "bordasQtd"=>$bordasQtd, "massas"=>$massas, "massasQtd"=>$massasQtd]);
         }
         else{
-            return redirect()->route('login');
+            return redirect("login")->with("error", "Você precisa estar logado!");
+            // return redirect()->route("login", ["error" => "Você precisa estar logado!"]);
         }
     }
 }

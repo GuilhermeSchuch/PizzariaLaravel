@@ -11,14 +11,14 @@
             <li class="list">
                 <a href="{{ route('charts') }}">
                     <span class="icon"><ion-icon name="pie-chart-outline"></ion-icon></span>
-                    <span class="text">Charts</span>
+                    <span class="text">Gráficos</span>
                 </a>
             </li>
 
             <li class="list">
                 <a href="{{ route('manage') }}">
-                    <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
-                    <span class="text">Manage</span>
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></ion-icon></span>
+                    <span class="text">Gerenciar</span>
                 </a>
             </li>
 

@@ -1,8 +1,10 @@
 <x-header />
 <x-navbar />
 
+<div class="charts-container">
     <section class="charts">
-        <div class="duo_charts">
+
+        <div class="chart">
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
                 google.charts.load('current', {'packages':['corechart']});
@@ -26,7 +28,7 @@
                         title: 'Sabores mais vendidos',
                         backgroundColor: {
                             'fill': '#000',
-                            'fillOpacity': 0.3 
+                            'fillOpacity': 0.6 
                         },
                         colors: [
                             '#cccc00', 
@@ -53,7 +55,7 @@
                         position: 'relative',
                         is3D: true,
                         chartArea: {
-                            left: 10,
+                            left: 20,
                             right: 30
                         },
                     }
@@ -65,8 +67,10 @@
             </script>
 
             <div id="piechart"></div>
+        </div>
 
-
+        <div class="chart">
+            
             <script type="text/javascript">
                 google.charts.load('current', {'packages':['corechart']});
                 google.charts.setOnLoadCallback(drawChart);
@@ -85,7 +89,8 @@
                     var options = {
                         title: 'Bordas mais vendidas',
                         backgroundColor: {
-                            'fill': 'transparent'
+                            'fill': '#000',
+                            'fillOpacity': 0.6 
                         },
                         colors: [
                             '#cccc00', 
@@ -112,7 +117,7 @@
                         position: 'relative',
                         is3D: true,
                         chartArea: {
-                            left: 10,
+                            left: 20,
                             right: 30
                         },
                     }
@@ -126,7 +131,7 @@
             <div id="piechart2"></div>
         </div>
 
-        <div class="one_chart">
+        <div class="chart">
             <script type="text/javascript">
                 google.charts.load('current', {'packages':['corechart']});
                 google.charts.setOnLoadCallback(drawChart);
@@ -147,7 +152,8 @@
                     var options = {
                         title: 'Massas mais vendidas',
                         backgroundColor: {
-                            'fill': 'transparent'
+                            'fill': '#000',
+                            'fillOpacity': 0.6 
                         },
                         colors: [
                             '#cccc00', 
@@ -174,7 +180,7 @@
                         position: 'relative',
                         is3D: true,
                         chartArea: {
-                            left: 10,
+                            left: 20,
                             right: 30
                         },
                     }
@@ -187,3 +193,4 @@
             <div id="piechart3"></div>
         </div>
     </section>
+</div>
