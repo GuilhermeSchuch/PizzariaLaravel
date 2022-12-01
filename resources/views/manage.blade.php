@@ -4,7 +4,7 @@
     <div class="alert alert-danger msg">{{ session("error") }}</div>
 @endif
 
-<x-navbar />
+<x-navbar :navbar="$navbar"/>
 
 
 

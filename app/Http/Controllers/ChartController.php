@@ -55,8 +55,9 @@ class ChartController extends Controller
                 }
             }
 
+            $navbar = "chart";
                 
-            return view('chart', ["sabores"=>$sabores, "saboresQtd"=>$saboresQtd, "bordas"=>$bordas, "bordasQtd"=>$bordasQtd, "massas"=>$massas, "massasQtd"=>$massasQtd]);
+            return view('chart', ["sabores"=>$sabores, "saboresQtd"=>$saboresQtd, "bordas"=>$bordas, "bordasQtd"=>$bordasQtd, "massas"=>$massas, "massasQtd"=>$massasQtd, "navbar"=>$navbar]);
         }
         else{
             return redirect("login")->with("error", "Você precisa estar logado!");

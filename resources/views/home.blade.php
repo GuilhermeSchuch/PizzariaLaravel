@@ -1,6 +1,6 @@
-<?php
-    
-?>
+@if (session("success"))
+    <div class="alert alert-success msg">{{ session("success") }}</div>
+@endif
 
 @extends('layouts.app')
 
@@ -53,5 +53,25 @@
         <a href="{{ url('/login') }}">Acessar sistema</a>
     </div>
 
+    <script>
+        let $msgContainer = document.querySelector(".msg-container");
+        let $msg = document.querySelector(".msg");
+    
+        if($msg){
+            $($msg).fadeOut(10000);
+            
+            setTimeout(function () {
+                $($msgContainer).fadeOut(1);
+            }, 9999);
+        }
+    </script>
+
 
 @endsection
+
+<style>
+    .alert{
+        z-index: 99;
+        margin-top: 1vh
+    }
+</style>

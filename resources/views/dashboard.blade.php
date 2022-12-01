@@ -1,5 +1,5 @@
 <x-header />
-<x-navbar />
+<x-navbar :navbar="$navbar"/>
 
 <?php 
     // print_r($saboresPizza);
@@ -33,6 +33,8 @@
     //     echo "<br>";
 
     // }
+
+    // print_r($data);
 
 ?>
 
@@ -108,7 +110,7 @@
             <table>
                 <thead>
                     <tr>
-                        <!-- <th>Id</th> -->
+                        <th>Nº Pedido</th>
                         <th>Massa</th>
                         <th>Borda</th>
                         <th>Sabor(es)</th>
@@ -123,6 +125,8 @@
 
                             <?php for($i = 0; $i < count($data); $i++): ?>
                                 <tr>
+                                    <td><?= $data[$i]["pizza_id"] ?></td>
+
                                     <td><?= $data[$i]["massa"] ?></td>
                                     <td><?= $data[$i]["borda"] ?></td>
 

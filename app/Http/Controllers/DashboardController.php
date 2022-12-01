@@ -49,8 +49,10 @@ class DashboardController extends Controller
                 }
             }
 
+            $navbar = "dashboard";
+
                 
-            return view('dashboard', ["sabores"=>$sabores, "saboresQtd"=>$saboresQtd, "data"=>$data, "saboresPizza"=>$saboresPizza]);
+            return view('dashboard', ["sabores"=>$sabores, "saboresQtd"=>$saboresQtd, "data"=>$data, "saboresPizza"=>$saboresPizza, "navbar"=>$navbar]);
         }
         else{
             return redirect('login')->with("error", "Você precisa estar logado!");

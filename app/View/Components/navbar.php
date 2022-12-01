@@ -4,6 +4,8 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
+
+
 class navbar extends Component
 {
     /**
@@ -11,9 +13,12 @@ class navbar extends Component
      *
      * @return void
      */
-    public function __construct()
+
+    public $navbar;
+    
+    public function __construct($navbar)
     {
-        //
+        $this->navbar = $navbar;
     }
 
     /**

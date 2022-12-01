@@ -34,7 +34,9 @@ class ManageController extends Controller
                 $sabores = $stmt->fetchAll();
             }
 
-            return view('manage', ["massas"=>$massas, "sabores"=>$sabores, "bordas"=>$bordas]);
+            $navbar = "manage";
+
+            return view('manage', ["massas"=>$massas, "sabores"=>$sabores, "bordas"=>$bordas, "navbar"=>$navbar]);
         }
         else{
             return redirect('login')->with("error", "Você precisa estar logado!");

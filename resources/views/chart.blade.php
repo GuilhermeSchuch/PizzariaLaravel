@@ -1,5 +1,5 @@
 <x-header />
-<x-navbar />
+<x-navbar :navbar="$navbar"/>
 
 <div class="charts-container">
     <section class="charts">
