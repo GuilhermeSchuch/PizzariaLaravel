@@ -1,43 +1,6 @@
 <x-header />
 <x-navbar :navbar="$navbar"/>
 
-<?php 
-    // print_r($saboresPizza);
-    // echo "<br>";
-    // echo "<br>";
-    // print_r($saboresPizza[0]);
-    // echo "<br>";
-    // print_r($saboresPizza[1]);
-    // echo "<br>";
-    // echo count($saboresPizza);
-    // echo "<br>";
-
-    // for($i = 0; $i < count($saboresPizza); $i++){
-    //     echo "Array da pizza: " . $i;
-    //     echo "<br>";
-
-    //     for($n = 0; $n < count($saboresPizza[$i]); $n++){
-    //         print_r($saboresPizza[$i][$n]["nome"]);
-    //         echo "<br>";
-    //     }
-    // }
-
-    // echo "<hr>";
-    // echo "<br>";
-
-
-    // for($i = 0; $i < count($data); $i++){
-    //     echo "Array da pizza: " . $i;
-    //     echo "<br>";
-    //     print_r($data[$i]);
-    //     echo "<br>";
-
-    // }
-
-    // print_r($data);
-
-?>
-
 
 <div class="dashboard-container main">
     <section class="chart dc">
